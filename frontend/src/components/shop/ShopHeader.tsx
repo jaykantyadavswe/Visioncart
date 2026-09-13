@@ -1,67 +1,91 @@
 import Link from "next/link";
-import Container from "../ui/Container";
 import { ChevronRight } from "lucide-react";
 
-export default function ShopHeader() {
+interface ShopHeaderProps {
+  collection?: string;
+  category?: string;
+  brand?: string;
+  search?: string;
+}
+
+export default function ShopHeader({
+  collection,
+  category,
+  brand,
+  search,
+}: ShopHeaderProps) {
+  let title = "All Products";
+  let description = "Discover our latest products across every category.";
+
+  if (collection === "trending") {
+    title = "Trending Products";
+    description = "Explore what's trending among shoppers.";
+  }
+
+  if (collection === "new-arrivals") {
+    title = "New Arrivals";
+    description = "Fresh products just added to our collection.";
+  }
+
+  if (collection === "flash-deals") {
+    title = "Flash Deals";
+    description = "Limited-time offers available now.";
+  }
+
+  if (collection === "premium") {
+    title = "Premium Picks";
+    description = "Carefully curated premium products.";
+  }
+
+  if (brand) {
+    title = `${brand} Products`;
+    description = `Browse all products from ${brand}.`;
+  }
+
+  if (category) {
+    title = `${category} Collection`;
+    description = `Explore the best ${category} products.`;
+  }
+
+  if (search) {
+    title = `Search Results`;
+    description = `Showing results for "${search}".`;
+  }
+
   return (
-    <section className="border-b border-slate-200 bg-gradient-to-b from-orange-50 to-white">
-      <Container>
+    <div className="mb-10">
 
-        <div className="py-10">
+      {/* Breadcrumb */}
 
-          {/* Breadcrumb */}
+      <div className="mb-4 flex items-center gap-2 text-sm text-slate-500">
 
-          <div className="flex items-center gap-2 text-sm text-slate-500">
+        <Link href="/">Home</Link>
 
-            <Link
-              href="/"
-              className="transition hover:text-orange-600"
-            >
-              Home
-            </Link>
+        <ChevronRight size={16} />
 
-            <ChevronRight size={15} />
+        <span>Shop</span>
 
-            <span className="font-medium text-slate-900">
-              Shop
+        {title !== "All Products" && (
+          <>
+            <ChevronRight size={16} />
+            <span className="font-medium text-slate-800">
+              {title}
             </span>
+          </>
+        )}
 
-          </div>
+      </div>
 
-          {/* Title */}
+      {/* Heading */}
 
-          <div className="mt-5 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <h1 className="text-4xl font-bold text-slate-900">
+        {title}
+      </h1>
 
-            <div>
+      <p className="mt-3 max-w-2xl text-slate-500">
+        {description}
+      </p>
 
-              <h1 className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-                Shop Collection
-              </h1>
-
-              <p className="mt-4 max-w-2xl text-lg text-slate-600">
-                Discover premium products across fashion,
-                electronics, beauty, gaming, and more.
-              </p>
-
-            </div>
-
-            <div className="rounded-2xl border border-orange-100 bg-white px-6 py-4 shadow-sm">
-
-              <p className="text-sm text-slate-500">
-                Total Products
-              </p>
-
-              <h2 className="mt-1 text-3xl font-bold text-orange-600">
-                2,456+
-              </h2>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </Container>
-    </section>
+    </div>
   );
 }

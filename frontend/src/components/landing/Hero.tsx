@@ -1,6 +1,7 @@
 import Container from "../ui/Container";
 import ProductPreviewCard from "./ProductPreviewCard";
 import { Flame, MoveRight, Star } from 'lucide-react';
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -26,16 +27,18 @@ export default function Hero() {
                         </p>
 
                         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                            <button
-                                className="
+                            <Link href="/discover">
+                                <button
+                                    className="
                                             inline-flex items-center justify-center gap-2
                                             rounded-xl bg-orange-600 px-7 py-3.5
                                             font-semibold text-white
                                             transition-all duration-300
-                                            hover:-translate-y-1 hover:bg-orange-700 hover:shadow-xl" >
-                                Shop Now
-                                <MoveRight size={18} />
-                            </button>
+                                            hover:-translate-y-1 hover:bg-orange-700 hover:shadow-xl cursor-pointer" >
+                                    Shop Now
+                                    <MoveRight size={18} />
+                                </button>
+                            </Link>
 
                             <button
                                 className="rounded-xl border border-slate-300 bg-white px-7 py-3.5 font-semibold text-slate-700 transition-all duration-300 hover:border-orange-500 hover:bg-orange-50 hover:text-orange-600"
@@ -79,7 +82,7 @@ export default function Hero() {
                         </div>
 
                         <div className="absolute flex gap-1 items-center justify -bottom-2 right-20 text-orange-500 rounded-xl bg-white px-5 py-3 shadow-xl">
-                            <Star size={18} className="fill-yellow-400 text-yellow-400"/> 50K+ Products
+                            <Star size={18} className="fill-yellow-400 text-yellow-400" /> 50K+ Products
                         </div>
 
                         <img src="/HeroSecImage/Hero2.png" alt="Hero Image" width="500" height="500" className="rounded-xl" />

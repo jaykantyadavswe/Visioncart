@@ -35,7 +35,7 @@ const sizes = ["S", "M", "L", "XL"];
 
 export default function FilterSidebar() {
   return (
-    <aside className="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <aside className="sticky top-24 self-start rounded-3xl border border-slate-200 bg-white p-6 shadow-sm  overflow-y-auto">
 
       {/* Header */}
 

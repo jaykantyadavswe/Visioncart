@@ -1,6 +1,7 @@
 import { MoveRight } from "lucide-react";
 import Container from "../ui/Container";
 import ProductCard from "./ProductCard";
+import Link from "next/link";
 
 const filters = [
   "All",
@@ -98,11 +99,12 @@ export default function FeaturedProducts() {
               quality, design, and customer satisfaction.
             </p>
           </div>
-
+          <Link href="/discover">
           <button className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-6 py-3 font-semibold transition-all hover:border-orange-500 hover:text-orange-600 text-zinc-700">
             View All Products
             <MoveRight size={18} />
           </button>
+          </Link>
         </div>
 
         {/* Filters */}
@@ -133,10 +135,12 @@ export default function FeaturedProducts() {
 
         {/* Load More */}
         <div className="mt-16 flex justify-center">
+          <Link href="/discover/shop">
           <button className="inline-flex items-center gap-2 rounded-xl bg-orange-600 px-8 py-3 font-semibold text-white transition-all hover:bg-orange-700 hover:shadow-lg">
             Load More Products
             <MoveRight size={18} />
           </button>
+          </Link>
         </div>
 
       </Container>
