@@ -8,15 +8,15 @@ export default function RegisterPage() {
     <AuthLayout bannerVariant="register">
       <div className="w-full max-w-md">
 
-        <span className="rounded-full bg-orange-100 px-4 py-2 text-sm font-semibold text-orange-600">
+        <span className="inline-flex rounded-full border border-orange-200 bg-orange-50 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-orange-600">
           Join VisionCart
         </span>
 
-        <h1 className="mt-6 text-4xl font-bold text-slate-900">
+        <h1 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
           Create Account
         </h1>
 
-        <p className="mt-3 text-slate-500">
+        <p className="mt-3 leading-7 text-slate-500">
           Create your account and start shopping in minutes.
         </p>
 

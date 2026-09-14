@@ -56,13 +56,13 @@ export default function LoginForm() {
   }
 
   return (
-    <form className="mt-10 space-y-6" onSubmit={handleSubmit}>
+    <form className="mt-7 space-y-4" onSubmit={handleSubmit}>
 
       {/* Email */}
 
       <div>
 
-        <label className="mb-2 block text-sm font-semibold text-slate-700">
+        <label className="mb-2 block text-sm font-semibold text-slate-800">
           Email Address
         </label>
 
@@ -76,7 +76,7 @@ export default function LoginForm() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="h-14 w-full rounded-xl border border-slate-300 bg-white pl-12 pr-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-12 pr-4 text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-100"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -89,7 +89,7 @@ export default function LoginForm() {
 
       <div>
 
-        <label className="mb-2 block text-sm font-semibold text-slate-700">
+        <label className="mb-2 block text-sm font-semibold text-slate-800">
           Password
         </label>
 
@@ -103,7 +103,7 @@ export default function LoginForm() {
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
-            className="h-14 w-full rounded-xl border border-slate-300 bg-white pl-12 pr-12 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-12 pr-12 text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-100"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -111,7 +111,8 @@ export default function LoginForm() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500"
+            aria-label={showPassword ? "Hide password" : "Show password"}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-lg p-1 text-slate-400 transition hover:bg-orange-50 hover:text-orange-600"
           >
             {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
           </button>
@@ -122,7 +123,7 @@ export default function LoginForm() {
 
       {/* Remember + Forgot */}
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4 px-1">
 
         <label className="flex items-center gap-2 text-sm text-slate-600">
 
@@ -133,13 +134,13 @@ export default function LoginForm() {
             onChange={(e) => setRememberMe(e.target.checked)}
           />
 
-          Remember Me
+          <span className="whitespace-nowrap">Remember me</span>
 
         </label>
 
         <Link
           href="/forgot-password"
-          className="text-sm font-medium text-orange-600 hover:underline"
+          className="whitespace-nowrap text-sm font-semibold text-orange-600 transition hover:text-orange-700 hover:underline"
         >
           Forgot Password?
         </Link>
@@ -151,7 +152,7 @@ export default function LoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="h-14 w-full rounded-xl bg-orange-600 font-semibold text-white transition hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="h-12 w-full rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 font-semibold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:from-orange-600 hover:to-orange-700 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? "Logging in..." : "Login"}
       </button>

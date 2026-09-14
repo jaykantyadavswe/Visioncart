@@ -8,65 +8,63 @@ import Logo from "../ui/Logo";
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-50 bg-white backdrop-blur-md">
+        <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
             <Container>
-                <nav className="flex h-16 text-zinc-700 items-center justify-between">
-                    {/* Logo */}
+                <nav className="flex h-[76px] items-center justify-between text-zinc-700">
                     <Logo />
 
-                    {/* Navigation */}
-                    <ul className="hidden text-sm font-medium items-center gap-8 md:flex">
+                    <ul className="hidden items-center gap-1 rounded-full border border-slate-200 bg-slate-50/80 p-1 text-sm font-medium md:flex">
                         {NAVIGATION_LINKS.map((item) => (
                             <li key={item.label}>
-                                <Link href={item.href} className="group relative inline-block transition hover:text-orange-500">
+                                <Link
+                                    href={item.href}
+                                    className="group relative inline-flex rounded-full px-4 py-2 transition hover:bg-white hover:text-orange-600 hover:shadow-sm"
+                                >
                                     {item.label}
-                                    <span className="absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-orange-500 transition-transform duration-300 group-hover:scale-x-100" />
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                    {/* Right Side */}
-                    <div className="hidden items-center gap-2 md:flex">
-                        {/* Search */}
-                        <button className="rounded-full p-2.5 transition hover:bg-orange-50 hover:text-orange-600">
+
+                    <div className="hidden items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-sm md:flex">
+                        <button aria-label="Search" className="rounded-full p-2.5 transition hover:bg-orange-50 hover:text-orange-600">
                             <Search size={20} />
                         </button>
 
-                        {/* Wishlist */}
                         <Link
                             href="/wishlist"
+                            aria-label="Wishlist"
                             className="relative rounded-full p-2.5 transition hover:bg-orange-50 hover:text-orange-600"
                         >
                             <Heart size={20} />
 
-                            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-orange-600 text-xs font-semibold text-white">
+                            <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-orange-600 px-1 text-[10px] font-bold text-white">
                                 2
                             </span>
                         </Link>
 
-                        {/* Profile */}
                         <Link
                             href="/login"
+                            aria-label="Account"
                             className="rounded-full p-2.5 transition hover:bg-orange-50 hover:text-orange-600"
                         >
                             <User size={20} />
                         </Link>
 
-                        {/* Cart */}
                         <Link
                             href="/cart"
+                            aria-label="Shopping cart"
                             className="relative rounded-full p-2.5 transition hover:bg-orange-50 hover:text-orange-600"
                         >
                             <ShoppingCart size={20} />
 
-                            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-orange-600 text-xs font-semibold text-white">
+                            <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-orange-600 px-1 text-[10px] font-bold text-white">
                                 3
                             </span>
                         </Link>
                     </div>
 
-                    {/* Mobile Menu */}
-                    <button className="rounded-full p-2.5 transition hover:bg-orange-50 hover:text-orange-600 md:hidden">
+                    <button aria-label="Open navigation menu" className="rounded-full border border-slate-200 p-2.5 transition hover:border-orange-300 hover:bg-orange-50 hover:text-orange-600 md:hidden">
                         <Menu size={22} />
                     </button>
                 </nav>

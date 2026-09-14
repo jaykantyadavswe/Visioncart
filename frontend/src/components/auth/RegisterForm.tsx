@@ -85,13 +85,13 @@ export default function RegisterForm() {
   }
 
   return (
-    <form className="mt-10 space-y-5" onSubmit={handleSubmit}>
+    <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
 
       {/* Full Name */}
 
       <div>
 
-        <label className="mb-2 block text-sm font-semibold">
+        <label className="mb-2 block text-sm font-semibold text-slate-800">
           Full Name
         </label>
 
@@ -105,7 +105,7 @@ export default function RegisterForm() {
           <input
             type="text"
             placeholder="John Doe"
-            className="h-14 w-full rounded-xl border border-slate-300 pl-12 pr-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-12 pr-4 text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-100"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -118,7 +118,7 @@ export default function RegisterForm() {
 
       <div>
 
-        <label className="mb-2 block text-sm font-semibold">
+        <label className="mb-2 block text-sm font-semibold text-slate-800">
           Email Address
         </label>
 
@@ -132,7 +132,7 @@ export default function RegisterForm() {
           <input
             type="email"
             placeholder="Jay@gmail.com"
-            className="h-14 w-full rounded-xl border border-slate-300 pl-12 pr-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-12 pr-4 text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-100"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -145,30 +145,34 @@ export default function RegisterForm() {
 
       <div>
 
-        <label className="mb-3 block text-sm font-semibold">
+        <label className="mb-3 block text-sm font-semibold text-slate-800">
           Account Type
         </label>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
 
           <button
             type="button"
-            className="rounded-xl border border-orange-500 bg-orange-50 p-4 text-center transition hover:border-orange-600"
+            className="rounded-xl border-2 border-orange-500 bg-orange-50 p-3 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-orange-600"
           >
-            <ShoppingBag className="mx-auto mb-2 text-orange-600" />
+            <span className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white text-orange-600 shadow-sm">
+              <ShoppingBag size={19} />
+            </span>
 
-            <p className="font-semibold">
+            <p className="text-sm font-bold text-slate-900">
               Customer
             </p>
           </button>
 
           <button
             type="button"
-            className="rounded-xl border border-slate-300 p-4 transition hover:border-orange-500"
+            className="rounded-xl border-2 border-slate-200 bg-white p-3 text-center transition hover:-translate-y-0.5 hover:border-orange-300 hover:bg-orange-50/40"
           >
-            <Store className="mx-auto mb-2" />
+            <span className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-500">
+              <Store size={19} />
+            </span>
 
-            <p className="font-semibold">
+            <p className="text-sm font-bold text-slate-700">
               Seller
             </p>
           </button>
@@ -181,7 +185,7 @@ export default function RegisterForm() {
 
       <div>
 
-        <label className="mb-2 block text-sm font-semibold">
+        <label className="mb-2 block text-sm font-semibold text-slate-800">
           Password
         </label>
 
@@ -195,7 +199,7 @@ export default function RegisterForm() {
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Password"
-            className="h-14 w-full rounded-xl border border-slate-300 pl-12 pr-12 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-12 pr-12 text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-100"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -203,7 +207,8 @@ export default function RegisterForm() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-1/2 -translate-y-1/2"
+            aria-label={showPassword ? "Hide password" : "Show password"}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-lg p-1 text-slate-400 transition hover:bg-orange-50 hover:text-orange-600"
           >
             {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
           </button>
@@ -216,7 +221,7 @@ export default function RegisterForm() {
 
       <div>
 
-        <label className="mb-2 block text-sm font-semibold">
+        <label className="mb-2 block text-sm font-semibold text-slate-800">
           Confirm Password
         </label>
 
@@ -230,7 +235,7 @@ export default function RegisterForm() {
           <input
             type={showConfirm ? "text" : "password"}
             placeholder="Confirm Password"
-            className="h-14 w-full rounded-xl border border-slate-300 pl-12 pr-12 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-12 pr-12 text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-100"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
@@ -238,7 +243,8 @@ export default function RegisterForm() {
           <button
             type="button"
             onClick={() => setShowConfirm(!showConfirm)}
-            className="absolute right-4 top-1/2 -translate-y-1/2"
+            aria-label={showConfirm ? "Hide confirmed password" : "Show confirmed password"}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-lg p-1 text-slate-400 transition hover:bg-orange-50 hover:text-orange-600"
           >
             {showConfirm ? <EyeOff size={20} /> : <Eye size={20} />}
           </button>
@@ -249,11 +255,11 @@ export default function RegisterForm() {
 
       {/* Terms */}
 
-      <label className="flex items-start gap-3 text-sm text-slate-600">
+      <label className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50/70 p-3 text-sm text-slate-600">
 
         <input
           type="checkbox"
-          className="mt-1 accent-orange-600"
+          className="mt-1 h-4 w-4 accent-orange-600"
           checked={acceptTerms}
           onChange={(e) => setAcceptTerms(e.target.checked)}
         />
@@ -276,7 +282,7 @@ export default function RegisterForm() {
       <button
         type="submit"
         disabled={loading}
-        className="h-14 w-full rounded-xl bg-orange-600 font-semibold text-white transition hover:bg-orange-700"
+        className="h-12 w-full rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 font-semibold text-white shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:from-orange-600 hover:to-orange-700 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? "Registering..." : "Register"} 
       </button>

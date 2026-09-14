@@ -39,173 +39,124 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-300">
+    <footer className="bg-[#0f172a] text-slate-300">
       <Container>
+        <div className="border-b border-white/10 py-16">
+          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.1fr]">
+            <div>
+              <Logo />
 
-        {/* Top */}
-        <div className="grid gap-12 border-b border-slate-800 py-16 lg:grid-cols-4">
+              <p className="mt-5 max-w-xs leading-7 text-slate-400">
+                Discover premium products across fashion, electronics, beauty, lifestyle, and more.
+              </p>
 
-          {/* Brand */}
-          <div>
-            <Logo />
+              <div className="mt-6 flex gap-3">
+                {socialLinks.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-300 transition duration-200 hover:border-orange-500 hover:bg-orange-500 hover:text-white"
+                  >
+                    {item.icon}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
-            <p className="mt-5 leading-7 text-slate-400">
-              Discover premium products across fashion, electronics,
-              beauty, lifestyle, and more. Designed for a seamless
-              shopping experience.
-            </p>
+            <div>
+              <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+                Shop
+              </h3>
 
-            <div className="mt-6 flex gap-3">
-              {socialLinks.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className="rounded-full border border-slate-700 p-2 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
-                >
-                  {item.icon}
-                </Link>
-              ))}
+              <ul className="space-y-3">
+                {shopLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-slate-400 transition hover:text-orange-400">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+                Company
+              </h3>
+
+              <ul className="space-y-3">
+                {companyLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-slate-400 transition hover:text-orange-400">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+                Contact
+              </h3>
+
+              <div className="space-y-4 text-slate-300">
+                <div className="flex items-start gap-3">
+                  <MapPin size={18} className="mt-1 text-orange-400" />
+                  <p className="text-slate-400">
+                    123 Business Street,
+                    <br />
+                    New Delhi, India
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Phone size={18} className="text-orange-400" />
+                  <p className="text-slate-300">+91 98765 43210</p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Mail size={18} className="text-orange-400" />
+                  <p className="text-slate-300">support@visioncart.com</p>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Shop */}
-          <div>
-            <h3 className="mb-5 text-lg font-semibold text-white">
-              Shop
-            </h3>
-
-            <ul className="space-y-3">
-              {shopLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="transition hover:text-orange-500"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="mb-5 text-lg font-semibold text-white">
-              Company
-            </h3>
-
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="transition hover:text-orange-500"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="mb-5 text-lg font-semibold text-white">
-              Contact
-            </h3>
-
-            <div className="space-y-4">
-
-              <div className="flex items-start gap-3">
-                <MapPin
-                  size={18}
-                  className="mt-1 text-orange-500"
-                />
-                <p className="text-slate-400">
-                  123 Business Street,
-                  <br />
-                  New Delhi, India
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone
-                  size={18}
-                  className="text-orange-500"
-                />
-                <p>+91 98765 43210</p>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail
-                  size={18}
-                  className="text-orange-500"
-                />
-                <p>support@visioncart.com</p>
-              </div>
-
-            </div>
-          </div>
-
         </div>
 
-        {/* Newsletter */}
         <div className="flex flex-col items-center justify-between gap-6 py-10 lg:flex-row">
-
           <div>
-            <h3 className="text-xl font-semibold text-white">
-              Subscribe to our Newsletter
-            </h3>
-
-            <p className="mt-2 text-slate-400">
-              Get the latest products, offers, and exclusive deals.
-            </p>
+            <h3 className="text-xl font-semibold text-white">Subscribe to our Newsletter</h3>
+            <p className="mt-2 text-slate-400">Get the latest products, offers, and exclusive deals.</p>
           </div>
 
-          <div className="flex w-full max-w-md">
+          <div className="flex w-full max-w-lg overflow-hidden rounded-full border border-slate-700 bg-slate-900">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 rounded-l-xl border border-slate-700 bg-slate-900 px-4 py-3 outline-none placeholder:text-slate-500"
+              className="flex-1 bg-transparent px-5 py-3.5 text-sm text-white outline-none placeholder:text-slate-500"
             />
 
-            <button className="rounded-r-xl bg-orange-600 px-6 font-medium text-white transition hover:bg-orange-700">
+            <button className="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3.5 text-sm font-medium text-white transition hover:brightness-110">
               Subscribe
             </button>
           </div>
-
         </div>
 
-        {/* Bottom */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800 py-6 text-sm md:flex-row">
-
-          <p className="text-slate-500">
-            © {new Date().getFullYear()} VisionCart. All rights reserved.
-          </p>
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-sm md:flex-row">
+          <p className="text-slate-500">© {new Date().getFullYear()} VisionCart. All rights reserved.</p>
 
           <div className="flex gap-6">
-            <Link
-              href="/privacy"
-              className="transition hover:text-orange-500"
-            >
+            <Link href="/privacy" className="text-slate-400 transition hover:text-orange-400">
               Privacy
             </Link>
-
-            <Link
-              href="/terms"
-              className="transition hover:text-orange-500"
-            >
+            <Link href="/terms" className="text-slate-400 transition hover:text-orange-400">
               Terms
             </Link>
-
-            <Link
-              href="/cookies"
-              className="transition hover:text-orange-500"
-            >
+            <Link href="/cookies" className="text-slate-400 transition hover:text-orange-400">
               Cookies
             </Link>
           </div>
-
         </div>
 
       </Container>

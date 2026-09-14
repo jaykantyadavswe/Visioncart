@@ -1,30 +1,29 @@
-import { Truck, Pizza, Zap } from 'lucide-react'
-import React from 'react'
+import { Tag, Truck, Zap } from "lucide-react";
 
 function Offer() {
     return (
-        <div className="bg-zinc-800 text-white">
-      <div className="mx-auto flex h-10 max-w-7xl items-center justify-center gap-6 px-4 text-sm font-medium">
-        <div className="flex items-center gap-2 transition hover:text-orange-500">
-          <Truck size={16} />
-          <span>Free Worldwide Shipping Over $100</span>
+        <div className="border-b border-white/10 bg-slate-950 text-white">
+            <div className="mx-auto flex min-h-11 max-w-7xl items-center justify-center gap-5 px-4 text-xs font-semibold tracking-wide sm:text-sm">
+                <div className="flex items-center gap-2 transition-colors hover:text-orange-300">
+                    <Truck size={15} className="text-orange-400" />
+                    <span>Free worldwide shipping over $100</span>
+                </div>
+
+                <span className="hidden h-1 w-1 rounded-full bg-orange-400 md:block" />
+
+                <div className="hidden items-center gap-2 transition-colors hover:text-orange-300 md:flex">
+                    <Tag size={15} className="text-orange-400" />
+                    <span>Summer sale: up to 50% off</span>
+                </div>
+
+                <span className="hidden h-1 w-1 rounded-full bg-orange-400 lg:block" />
+
+                <div className="hidden items-center gap-2 transition-colors hover:text-orange-300 lg:flex">
+                    <Zap size={15} className="text-orange-400" />
+                    <span>Limited time offer</span>
+                </div>
+            </div>
         </div>
-
-        <span className="hidden md:block text-white/50">|</span>
-
-        <div className="hidden items-center gap-2 md:flex transition hover:text-orange-500">
-          <Pizza size={16} />
-          <span>Summer Sale: Up to 50% Off</span>
-        </div>
-
-        <span className="hidden md:block text-white/50">|</span>
-
-        <div className="hidden items-center gap-2 lg:flex transition hover:text-orange-500">
-          <Zap size={16} />
-          <span>Limited Time Offer</span>
-        </div>
-      </div>
-    </div>
     )
 }
 
