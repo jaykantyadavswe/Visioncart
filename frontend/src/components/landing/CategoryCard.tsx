@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface CategoryCardProps {
   title: string;
@@ -23,11 +24,12 @@ export default function CategoryCard({
       <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-r from-orange-100/80 via-amber-50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="relative flex flex-col items-center text-center">
-        <div className="mb-5 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 shadow-inner ring-8 ring-white transition-all duration-300 group-hover:scale-[1.02] group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-orange-600">
+        <div className="relative mb-5 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 shadow-inner ring-8 ring-white transition-all duration-300 group-hover:scale-[1.02] group-hover:bg-gradient-to-br group-hover:from-orange-500 group-hover:to-orange-600">
           {image ? (
-            <img
+            <Image
               src={image}
               alt={title}
+              fill
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
           ) : (

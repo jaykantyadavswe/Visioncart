@@ -1,5 +1,6 @@
 import Container from "../ui/Container";
 import CategoryCard from "./CategoryCard";
+import Link from "next/link";
 
 import {
   Dumbbell,
@@ -17,7 +18,7 @@ const categories = [
     icon: <Shirt size={28} />,
     products: "1,250+ Products",
     href: "/categories/fashion",
-    image: "shopbycategories/pic1.jpg",
+    image: "/shopbycategories/pic1.jpg",
   },
   {
     id: 2,
@@ -25,7 +26,7 @@ const categories = [
     icon: <Laptop size={28} />,
     products: "980+ Products",
     href: "/categories/electronics",
-    image: "shopbycategories/headphones2.jpg",
+    image: "/shopbycategories/headphones2.jpg",
   },
   {
     id: 3,
@@ -33,7 +34,7 @@ const categories = [
     icon: <Sparkles size={28} />,
     products: "540+ Products",
     href: "/categories/beauty",
-    image: "shopbycategories/beauti.jpg",
+    image: "/shopbycategories/beauti.jpg",
   },
   {
     id: 4,
@@ -41,7 +42,7 @@ const categories = [
     icon: <Dumbbell size={28} />,
     products: "2,400+ Products",
     href: "/categories/fitness",
-    image: "shopbycategories/fitness.jpg",
+    image: "/shopbycategories/fitness.jpg",
   },
   {
     id: 5,
@@ -49,7 +50,7 @@ const categories = [
     icon: <Home size={28} />,
     products: "780+ Products",
     href: "/categories/home-decor",
-    image: "shopbycategories/homedecor.jpg",
+    image: "/shopbycategories/homedecor.jpg",
   },
   {
     id: 6,
@@ -57,7 +58,7 @@ const categories = [
     icon: <Gem size={28} />,
     products: "650+ Products",
     href: "/categories/accessories",
-    image: "shopbycategories/headphones.jpg",
+    image: "/shopbycategories/headphones.jpg",
   },
 ];
 
@@ -80,9 +81,9 @@ export default function Categories() {
             </p>
           </div>
 
-          <button className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-orange-500 hover:text-orange-600 hover:shadow-sm md:block">
+          <Link href="/categories" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-orange-500 hover:text-orange-600 hover:shadow-sm md:block">
             View All Categories <span className="ml-2">→</span>
-          </button>
+          </Link>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">

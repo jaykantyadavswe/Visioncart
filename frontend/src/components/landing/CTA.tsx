@@ -26,7 +26,7 @@ export default function CTA() {
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href="/discover/shop"
+                  href="/shop"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-50"
                 >
                   Shop Now
@@ -34,10 +34,10 @@ export default function CTA() {
                 </Link>
 
                 <Link
-                  href="/discover/shop"
+                  href="/categories"
                   className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10"
                 >
-                  Browse Collection
+                  Browse Categories
                 </Link>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Container from "../ui/Container";
-import ProductCard from "../shop/ProductCard";
+import ProductCard from "../landing/ProductCard";
 
 const relatedProducts = [
   {
@@ -9,7 +9,7 @@ const relatedProducts = [
     title: "Apple Watch Series 9",
     category: "Wearables",
     brand: "Apple",
-    image: "/products/watch.jpg",
+    image: "/Products/image4.png",
     price: 38999,
     originalPrice: 42999,
     rating: 4.9,
@@ -21,7 +21,7 @@ const relatedProducts = [
     title: "Sony WH-1000XM5",
     category: "Audio",
     brand: "Sony",
-    image: "/products/headphones.jpg",
+    image: "/Products/image3.png",
     price: 24999,
     originalPrice: 27999,
     rating: 4.8,
@@ -33,7 +33,7 @@ const relatedProducts = [
     title: "MacBook Air M3",
     category: "Laptop",
     brand: "Apple",
-    image: "/products/laptop.jpg",
+    image: "/Products/image.png",
     price: 114999,
     originalPrice: 124999,
     rating: 4.9,
@@ -45,7 +45,7 @@ const relatedProducts = [
     title: "Mechanical Keyboard",
     category: "Accessories",
     brand: "Logitech",
-    image: "/products/keyboard.jpg",
+    image: "/Products/image2.png",
     price: 5499,
     originalPrice: 6999,
     rating: 4.7,
@@ -92,7 +92,12 @@ export default function RelatedProducts() {
           {relatedProducts.map((product) => (
             <ProductCard
               key={product.id}
-              {...product}
+              id={product.id}
+              title={product.title}
+              category={product.category}
+              price={product.price}
+              rating={product.rating}
+              image={product.image}
             />
           ))}
 

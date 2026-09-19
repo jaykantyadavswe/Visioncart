@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Heart, ShoppingBag, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Container from "../ui/Container";
+import WishlistButton from "@/components/wishlist/WishlistButton";
+import AddToCartButton from "@/components/cart/AddToCartButton";
+import { shopCatalog, formatPrice } from "@/app/lib/shopCatalog";
 
 const products = [
   {
@@ -66,10 +69,10 @@ export default function Trending() {
           </h2>
 
           <Link
-            href="/discover"
+            href="/shop/trending"
             className="inline-flex  items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 shadow-sm transition-all duration-300 hover:border-orange-500 hover:text-orange-600 hover:shadow-md"
           >
-            View All New Arrivals
+            View All Trending
             <ArrowRight size={18} />
           </Link>
         </div>
@@ -91,9 +94,7 @@ export default function Trending() {
                   {product.badge}
                 </span>
 
-                <button className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm transition hover:scale-105">
-                  <Heart size={15} className="text-slate-600" />
-                </button>
+                <WishlistButton productId={product.id} title={product.name} className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm transition hover:scale-105" />
 
                 <div className="relative h-56 overflow-hidden">
                   <Image
@@ -110,8 +111,8 @@ export default function Trending() {
                 <h3 className="text-base font-medium text-slate-800 font-semibold">{product.name}</h3>
 
                 <div className="mt-3 flex items-center gap-2">
-                  <span className="text-xl font-bold text-slate-900">${product.price.toFixed(2)}</span>
-                  <span className="text-sm text-slate-400 line-through">${product.oldPrice.toFixed(2)}</span>
+                  <span className="text-xl font-bold text-slate-900">{formatPrice(shopCatalog.find((item) => item.id === product.id)?.price ?? Math.round(product.price * 85))}</span>
+                  <span className="text-sm text-slate-400 line-through">{formatPrice(shopCatalog.find((item) => item.id === product.id)?.originalPrice ?? Math.round(product.oldPrice * 85))}</span>
                 </div>
 
                 <div className="mt-3 flex items-center justify-between">
@@ -122,9 +123,7 @@ export default function Trending() {
                     </span>
                   </div>
 
-                  <button className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition hover:bg-orange-600 hover:text-white">
-                    <ShoppingBag size={16} />
-                  </button>
+                  {shopCatalog.find((item) => item.id === product.id) && <AddToCartButton product={shopCatalog.find((item) => item.id === product.id)!} iconOnly className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition hover:bg-orange-600 hover:text-white" />}
                 </div>
               </div>
             </div>

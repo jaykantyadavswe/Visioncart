@@ -2,6 +2,7 @@ interface ContainerProps {
   children: React.ReactNode;
   className?: string;
   size?: "sm" | "md" | "lg" | "xl";
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const sizes = {
@@ -15,10 +16,12 @@ export default function Container({
   children,
   className = "",
   size = "xl",
+  onClick,
 }: ContainerProps) {
   return (
     <div
       className={`mx-auto w-full ${sizes[size]} px-4 sm:px-6 lg:px-8 ${className}`}
+      onClick={onClick}
     >
       {children}
     </div>

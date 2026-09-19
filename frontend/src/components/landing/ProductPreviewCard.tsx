@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 interface ProductPreviewCardProps {
   title: string;
   price: string;
@@ -12,7 +15,7 @@ export default function ProductPreviewCard({
   return (
     <div className="w-45 rounded-2xl border border-slate-200 bg-white p-4 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
       <div className="mb-4 flex h-25 items-center justify-center overflow-hidden rounded-xl bg-slate-100">
-        <img src={image} alt={title} className="h-full w-full object-cover" />
+        <Image src={image} alt={title} width={180} height={100} className="h-full w-full object-cover" />
       </div>
 
       <h3 className="font-semibold text-zinc-800">
@@ -24,9 +27,9 @@ export default function ProductPreviewCard({
           {price}
         </span>
 
-        <button className="rounded-lg bg-orange-600 px-3 py-1 text-sm text-white">
+        <Link href="/shop" className="rounded-lg bg-orange-600 px-3 py-1 text-sm text-white transition hover:bg-orange-700">
           View
-        </button>
+        </Link>
       </div>
     </div>
   );

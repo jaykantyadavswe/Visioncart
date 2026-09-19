@@ -4,7 +4,7 @@ export default function AuthFooter() {
   return (
     <div className="mt-5 text-center text-sm text-slate-600">
 
-      Don't have an account?{" "}
+      Don&apos;t have an account?{" "}
 
       <Link
         href="/register"

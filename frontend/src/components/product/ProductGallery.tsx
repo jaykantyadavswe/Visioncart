@@ -4,10 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/products/laptop.jpg",
-  "/products/headphones.jpg",
-  "/products/watch.jpg",
-  "/products/keyboard.jpg",
+  "/Products/image.png",
+  "/Products/image3.png",
+  "/Products/image4.png",
+  "/Products/image2.png",
 ];
 
 export default function ProductGallery() {

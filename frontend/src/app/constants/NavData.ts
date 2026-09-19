@@ -1,10 +1,11 @@
 export const NAVIGATION_LINKS = [
-  {href: '/', label: "Home"}, 
-  {href: '/discover', label: "Discover"},
-  {href: '/discover/shop', label: "Shop"}, 
-  {href: '/discover/shop/newArrivals', label: "New Arrivals"},
-  {href: '/discover/shop/bestSellings', label: "Best Sellers"},
-  {href: '/contact', label: "About"},
-  {href: '/contact', label: "Blog"},
-  {href: '/contact', label: "Contact"}
+  // {href: '/', label: "Home"}, 
+  {href: '/shop/trending', label: "Trending"},
+  {href: '/shop', label: "Shop"}, 
+  {href: '/categories', label: "Categories"},
+  {href: '/shop/newArrivals', label: "New Arrivals"},
+  {href: '/shop/bestSellings', label: "Best Sellers"},
+  // {href: '/contact', label: "About"},
+  // {href: '/contact', label: "Blog"},
+  // {href: '/contact', label: "Contact"}
 ];

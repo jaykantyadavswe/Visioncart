@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShoppingBag, Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Container from "../ui/Container";
+import AddToCartButton from "@/components/cart/AddToCartButton";
+import { shopCatalog } from "@/app/lib/shopCatalog";
 
 const products = [
   {
@@ -49,7 +51,7 @@ export default function Bestseller() {
           </h2>
 
           <Link
-            href="/discover"
+            href="/shop/bestSellings"
             className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 shadow-sm transition-all duration-300 hover:border-orange-500 hover:text-orange-600 hover:shadow-md"
           >
             View All Best Sellers
@@ -101,13 +103,8 @@ export default function Bestseller() {
                   </div>
 
                   <div className="mt-4 flex items-center justify-between gap-3">
-                    <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-600">
-                      Quick Add
-                    </button>
+                    {shopCatalog.find((item) => item.id === product.id) && <AddToCartButton product={shopCatalog.find((item) => item.id === product.id)!} className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-600" />}
 
-                    <button className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-700 shadow-sm transition hover:bg-orange-600 hover:text-white">
-                      <ShoppingBag size={16} />
-                    </button>
                   </div>
                 </div>
               </div>

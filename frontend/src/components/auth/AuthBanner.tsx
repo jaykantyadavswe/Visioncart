@@ -3,6 +3,7 @@ import {
   Truck,
   ShoppingBag,
 } from "lucide-react";
+import Image from "next/image";
 
 type AuthBannerProps = {
   variant?: "login" | "register";
@@ -41,9 +42,11 @@ export default function AuthBanner({ variant = "login" }: AuthBannerProps) {
       </div>
 
       <div className="relative flex justify-center py-4">
-        <img
+        <Image
           src={data.image}
           alt="Shopping"
+          width={520}
+          height={320}
           className="max-h-[270px] object-contain drop-shadow-[0_24px_25px_rgba(0,0,0,0.25)]"
         />
       </div>

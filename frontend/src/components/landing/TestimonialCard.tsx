@@ -33,7 +33,7 @@ export default function TestimonialCard({
       </div>
 
       <p className="mt-6 leading-7 text-slate-600">
-        "{review}"
+        &quot;{review}&quot;
       </p>
 
       <div className="mt-8 flex items-center gap-4">

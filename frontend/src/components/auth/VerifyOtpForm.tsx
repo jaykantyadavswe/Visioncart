@@ -58,7 +58,7 @@ export default function VerifyOtpForm() {
       <div className="mt-6 text-center">
 
         <p className="text-sm text-slate-500">
-          Didn't receive the code?
+          Didn&apos;t receive the code?
         </p>
 
         <button

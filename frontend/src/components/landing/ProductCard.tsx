@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, ShoppingCart, Star } from "lucide-react";
-import { useState } from "react";
+import { Star } from "lucide-react";
+import WishlistButton from "@/components/wishlist/WishlistButton";
+import AddToCartButton from "@/components/cart/AddToCartButton";
+import { shopCatalog } from "@/app/lib/shopCatalog";
 
 interface ProductCardProps {
   title: string;
@@ -10,6 +12,7 @@ interface ProductCardProps {
   price: number;
   rating: number;
   image: string;
+  id: number;
 }
 
 export default function ProductCard({
@@ -18,9 +21,8 @@ export default function ProductCard({
   price,
   rating,
   image,
+  id,
 }: ProductCardProps) {
-  const [liked, setLiked] = useState(false);
-
   return (
     <div className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-orange-200 hover:shadow-[0_28px_55px_rgba(249,115,22,0.12)]">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-orange-100/80 via-amber-50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -36,18 +38,7 @@ export default function ProductCard({
 
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
 
-        <button
-          onClick={() => setLiked(!liked)}
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-slate-700 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
-          aria-label="Add to wishlist"
-        >
-          <Heart
-            size={18}
-            className={`transition-all duration-300 ${
-              liked ? "fill-red-500 text-red-500" : "text-slate-700 hover:text-red-500"
-            }`}
-          />
-        </button>
+        <WishlistButton productId={id} title={title} className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-slate-700 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:scale-105" />
 
         <span className="absolute left-4 top-4 rounded-full bg-red-500 px-3 py-1 text-[11px] font-semibold tracking-wide text-white shadow-md">
           20% OFF
@@ -79,10 +70,7 @@ export default function ProductCard({
           </span>
         </div>
 
-        <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-lg">
-          <ShoppingCart size={18} />
-          Add to Cart
-        </button>
+        {shopCatalog.find((product) => product.id === id) && <AddToCartButton product={shopCatalog.find((product) => product.id === id)!} className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-lg" />}
       </div>
     </div>
   );

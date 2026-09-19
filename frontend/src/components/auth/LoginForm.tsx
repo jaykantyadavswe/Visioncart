@@ -46,7 +46,7 @@ export default function LoginForm() {
       toast.success("Logged in successfully");
 
       setTimeout(() => {
-        router.push("/discover");
+        router.push("/shop");
       }, 1000);
     } catch (error) {
       toast.error(`Login failed ${error instanceof Error ? error.message : "Unknown error"}`);

@@ -15,7 +15,7 @@ export default function VerifyOtpPage() {
         </h1>
 
         <p className="mt-3 text-slate-500">
-          We've sent a 6-digit verification code to your email.
+          We&apos;ve sent a 6-digit verification code to your email.
         </p>
 
         <VerifyOtpForm />

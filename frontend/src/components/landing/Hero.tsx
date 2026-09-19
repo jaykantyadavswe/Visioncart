@@ -2,6 +2,7 @@ import Container from "../ui/Container";
 import ProductPreviewCard from "./ProductPreviewCard";
 import { ArrowUpRight, Flame, MoveRight, ShieldCheck, Star } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
     return (
@@ -12,22 +13,22 @@ export default function Hero() {
                     <div className="max-w-2xl">
                         <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-orange-600 shadow-sm">
                             <Flame size={16} className="fill-orange-500" />
-                            Trending Now
+                            Everything in one place
                         </span>
 
                         <h1 className="mt-7 text-5xl font-bold leading-[1.05] tracking-tight text-slate-950 md:text-6xl lg:text-[clamp(3.5rem,5.4vw,5.25rem)]">
-                            Find what fits
+                            Discover what fits
                             <br />
-                            <span className="text-orange-600">your world.</span>
+                            <span className="text-orange-600">your everyday.</span>
                         </h1>
 
                         <p className="mt-6 max-w-lg text-base leading-8 text-slate-600 md:text-lg">
-                            Explore premium collections, exclusive offers, and products carefully selected to elevate your everyday shopping experience.
+                            Shop electronics, beauty, fashion, home, fitness, and everyday essentials, all carefully selected to make life a little better.
                         </p>
 
                         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                             <Link
-                                href="/discover"
+                                href="/shop"
                                 className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-orange-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-700 hover:shadow-xl"
                             >
                                 Shop Now
@@ -38,7 +39,7 @@ export default function Hero() {
                                 href="/categories"
                                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-3.5 font-semibold text-slate-700 transition-all duration-300 hover:border-orange-500 hover:bg-orange-50 hover:text-orange-600"
                             >
-                                Explore Collections
+                                Explore Categories
                                 <ArrowUpRight size={18} />
                             </Link>
                         </div>
@@ -64,7 +65,7 @@ export default function Hero() {
 
                         <div className="absolute bottom-10 left-8 z-10 hidden lg:block">
                             <ProductPreviewCard
-                                title="Formal Pants"
+                                title="Everyday essentials"
                                 price="₹7,999"
                                 image="/HeroSecImage/imagea.png"
                             />
@@ -89,7 +90,7 @@ export default function Hero() {
                             <Star size={18} className="fill-yellow-400 text-yellow-400" /> 50K+ Products
                         </div>
 
-                        <img src="/HeroSecImage/Hero2.png" alt="Featured VisionCart products" width="500" height="500" className="relative z-[1] w-[78%] max-w-[500px] rounded-[32px] object-cover drop-shadow-[0_24px_24px_rgba(15,23,42,0.16)]" />
+                        <Image src="/HeroSecImage/Hero2.PNG" alt="Featured VisionCart products" width={500} height={500} className="relative z-[1] w-[78%] max-w-[500px] rounded-[32px] object-cover drop-shadow-[0_24px_24px_rgba(15,23,42,0.16)]" />
                     </div>
                 </div>
             </Container>

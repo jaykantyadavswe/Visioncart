@@ -10,24 +10,17 @@ import Container from "../ui/Container";
 import Logo from "../ui/Logo";
 
 const shopLinks = [
-  { label: "All Products", href: "/products" },
+  { label: "All Products", href: "/shop" },
   { label: "Categories", href: "/categories" },
-  { label: "New Arrivals", href: "/products/new" },
-  { label: "Best Sellers", href: "/products/best-sellers" },
+  { label: "New Arrivals", href: "/shop/newArrivals" },
+  { label: "Best Sellers", href: "/shop/bestSellings" },
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
-  { label: "Careers", href: "/careers" },
-  { label: "Blogs", href: "/blogs" },
-];
-
-const supportLinks = [
-  { label: "Help Center", href: "/help" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms & Conditions", href: "/terms" },
-  { label: "Returns & Refunds", href: "/returns" },
+  { label: "About Us", href: "/" },
+  { label: "Contact Us", href: "/categories" },
+  { label: "Careers", href: "/shop" },
+  { label: "Blogs", href: "/shop/trending" },
 ];
 
 const socialLinks = [
@@ -147,13 +140,13 @@ export default function Footer() {
           <p className="text-slate-500">© {new Date().getFullYear()} VisionCart. All rights reserved.</p>
 
           <div className="flex gap-6">
-            <Link href="/privacy" className="text-slate-400 transition hover:text-orange-400">
+            <Link href="/" className="text-slate-400 transition hover:text-orange-400">
               Privacy
             </Link>
-            <Link href="/terms" className="text-slate-400 transition hover:text-orange-400">
+            <Link href="/shop" className="text-slate-400 transition hover:text-orange-400">
               Terms
             </Link>
-            <Link href="/cookies" className="text-slate-400 transition hover:text-orange-400">
+            <Link href="/categories" className="text-slate-400 transition hover:text-orange-400">
               Cookies
             </Link>
           </div>
